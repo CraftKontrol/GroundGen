@@ -1,0 +1,19 @@
+# TOUCHDESIGNER
+/TDImportCache/
+/Backup/
+/*.toe
+!GroundGen.toe
+/logs/
+/Records/
+/*.dmp
+/log*
+*.bak
+/Log/
+/TD/TouchEngineCrash*
+
+# MAYA
+*.swatch
+
+# WINDOWS
+*.db
+

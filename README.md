@@ -16,13 +16,14 @@
 
 ---
 
-## Managed Areas
+## [Common-Networks](https://github.com/CraftKontrol/GroundGen/wiki/Common-Networks)
+
 These are network zones where terrain and splatmap networks are built. They are managed and monitored continuously to update parameters and the shader in real time.
 
-### Terrain Network
+### [Terrain Network](https://github.com/CraftKontrol/GroundGen/wiki/Terrain-Network)
 The main area for constructing and manipulating the terrain's geometry. Nodes in this network define the shape, elevation, and features of your landscape.
 
-### Splatmap Network
+### [Splatmap Network](https://github.com/CraftKontrol/GroundGen/wiki/Splatmap-Network) 
 Handles the generation and blending of splatmaps, which control the texture distribution across your terrain.
 
 ---

@@ -1,13 +1,13 @@
-# GGEN - Procedural Terrain Generator for TouchDesigner
+# GGEN - POP Terrain Generator for TouchDesigner
 ![GGEN System Overview](Assets/System/GGen_alpha.png)
 
-**GGEN** aka (Gégène) is a modular node‑based procedural terrain generation toolkit for TouchDesigner that lets you build and iterate on believable landscapes by chaining 3D and 2D operators (noise, shape, terraces, erosion, cavities, slope, snow, beaches, etc.), generate unlimited splatmaps stored as point attributes, tile and fill large 3D textures, and auto‑synthesize a powerful GLSL shader supporting height blending, and partial normal derivative for natural material transitions; it provides separate terrain and splatmap networks for geometry shaping and texture/biome distribution, encourages a fully procedural, GPU‑friendly, non‑destructive workflow, and ships as reusable components you can extend, with contributions welcomed under the MIT license.
+**GGEN** aka (Gégène) is a modular POP (point operator) based procedural terrain generation toolkit for TouchDesigner that lets you build and iterate on believable landscapes by chaining 3D and 2D operators (noise, shape, terraces, erosion, cavities, slope, snow, beaches, etc.), generate unlimited splatmaps stored as point attributes, tile and fill large 3D textures, and auto‑synthesize a powerful GLSL shader supporting height blending, and partial normal derivative for natural material transitions; it provides separate terrain and splatmap networks for geometry shaping and texture/biome distribution, encourages a fully procedural, GPU‑friendly, non‑destructive workflow, and ships as reusable components you can extend, with contributions welcomed under the MIT license.
 
 ---
 
 ### Features
 
-- **Modular Workflow:** Build complex terrains using a non destructive workflows with 3D and 2D operators.
+- **Modular Workflow:** Build complex terrains using a non destructive POP workflows with 3D and 2D operators.
 - **Infinite Splatmaps:** Store splatmaps as point attributes as your grahic card can handle them.
 - **3d Textures:** 3D texture filler system for managing large textures efficiently.
 - **GLSL Shader Generation:** On-the-fly shader creation with blending parameters.

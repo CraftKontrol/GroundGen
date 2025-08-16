@@ -57,6 +57,13 @@ Handles the generation and blending of splatmaps, which control the texture dist
 | Blender | Attribute mixer for splatmap networks | Combine and blend point attributes. |
 | Thermal Wither | Simulate weathering effects | Models wind-driven material loss. |
 
+---
+
+## Credits
+
+Main dev : Arnaud Cassone aka [Artcraft](https://www.artcraft-zone.com)
+
+---
 
 ## Getting Started
 
@@ -67,9 +74,7 @@ Handles the generation and blending of splatmaps, which control the texture dist
 
 ---
 
-## Credits
 
-[Arnaud Cassone](https://www.artcraft-zone.com)
 
 ## Documentation
 

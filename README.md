@@ -38,13 +38,13 @@ Handles the generation and blending of splatmaps, which control the texture dist
 | Terrace | Apply stepped terraces | Simulates plateaus, geological terraces. |
 | Erosion | Simulate hydraulic/thermal erosion | Carves slopes and sediment deposits. |
 | Beach | Create coastline transitions | Blends sand and water edges at elevation ranges. |
-| Snow | Add altitude/slope-based snow coverage | Controls accumulation by slope. |
+| Snow | Altitude/slope-based snow coverage | Controls accumulation by slope. |
 
 ### 2D Operators
 
 | Operator | Purpose | Notes |
 |---|---:|---|
-| Cavity | Detect and enhance cavities/depressions | Neighborhood analysis to accentuate valleys/crevices. |
+| Cavity | Detect cavities/depressions | Neighborhood analysis. |
 | HeightMap | Extract 2D heightmap from terrain flow | For export or downstream 2D processing. |
 | Level | Normalize/adjust texture values | Fit height or texture within specified bounds. |
 | Slope | Compute terrain slope | Drive slope-based texturing or visualizations. |

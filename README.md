@@ -33,12 +33,12 @@ Handles the generation and blending of splatmaps, which control the texture dist
 
 | Operator | Purpose | Notes |
 |---|---:|---|
-| Noise | Add natural variation using Perlin/Simplex/etc. | Useful for fractal detail and turbulence. |
-| Shape | Define base terrain forms (mountains, valleys, plains) | Uses profiles/curves for silhouette control. |
-| Terrace | Apply stepped terraces | Simulates plateaus, rice fields, geological terraces. |
-| Erosion | Simulate hydraulic/thermal erosion | Carves riverbeds, slopes, and sediment deposits. |
+| Noise | Add Perlin noise | Useful for fractal detail and turbulence. |
+| Shape | Define base terrain forms | Uses profiles/curves for silhouette control. |
+| Terrace | Apply stepped terraces | Simulates plateaus, geological terraces. |
+| Erosion | Simulate hydraulic/thermal erosion | Carves slopes and sediment deposits. |
 | Beach | Create coastline transitions | Blends sand and water edges at elevation ranges. |
-| Snow | Add altitude/slope-based snow coverage | Controls accumulation by slope and height. |
+| Snow | Add altitude/slope-based snow coverage | Controls accumulation by slope. |
 
 ### 2D Operators
 

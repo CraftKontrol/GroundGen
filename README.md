@@ -60,24 +60,24 @@ Handles the generation and blending of splatmaps, which control the texture dist
 
 ## Credits
 
-Main dev : Arnaud Cassone aka [Artcraft](https://www.artcraft-zone.com)
-
+Main & lone dev : Arnaud Cassone aka [Artcraft](https://www.artcraft-zone.com)
+thanks to derivative [TouchDesigner](https://derivative.ca/)
 ---
 
 ## Getting Started
 
 1. **Clone the Repository:**
+
 2. **Drag and drop the GGEN tox file into your TouchDesigner project.**
 
-3. **See the instructions provided in the GGEN documentation for setting up your terrain and splatmap networks.**
+3. **See the instructions provided in the GGEN.toe example file.
 
 ---
 
 
-
 ## Documentation
 
-For detailed documentation on how to use GGEN, please refer to the [GGEN Documentation](docs/index.md).
+For detailed documentation on how to use GGEN, please refer to the [wiki](https://github.com/CraftKontrol/GroundGen/wiki).
 
 ## Contributing
 

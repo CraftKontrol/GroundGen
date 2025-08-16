@@ -60,8 +60,8 @@ Handles the generation and blending of splatmaps, which control the texture dist
 
 ## Credits
 
-Main & lone dev : Arnaud Cassone aka [Artcraft](https://www.artcraft-zone.com)
-thanks to derivative [TouchDesigner](https://derivative.ca/)
+### Main & lone dev : Arnaud Cassone aka [Artcraft](https://www.artcraft-zone.com)
+### thanks to derivative [TouchDesigner](https://derivative.ca/)
 ---
 
 ## Getting Started
@@ -70,7 +70,7 @@ thanks to derivative [TouchDesigner](https://derivative.ca/)
 
 2. **Drag and drop the GGEN tox file into your TouchDesigner project.**
 
-3. **See the instructions provided in the GGEN.toe example file.
+3. **See the instructions provided in the GGEN.toe example file.**
 
 ---
 

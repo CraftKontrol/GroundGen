@@ -7,7 +7,7 @@
 
 ### Features
 
-- **Modular Node-Based Workflow:** Build complex terrains using a non destructive workflows with a variety of 3D and 2D operators.
+- **Modular Workflow:** Build complex terrains using a non destructive workflows with a variety of 3D and 2D operators.
 - **Infinite Splatmaps:** Store splatmaps as point attributes as your grahic card can handle them.
 - **3d Textures:** 3D texture filler system for managing large textures efficiently.
 - **GLSL Shader Generation:** On-the-fly shader creation with blending parameters.

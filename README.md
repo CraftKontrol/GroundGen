@@ -60,8 +60,8 @@ Handles the generation and blending of splatmaps, which control the texture dist
 
 ## Credits
 
-**Main & lone dev : Arnaud Cassone aka [Artcraft](https://www.artcraft-zone.com)**
-**thanks to derivative [TouchDesigner](https://derivative.ca/)**
+##### Main & lone dev : Arnaud Cassone aka [Artcraft](https://www.artcraft-zone.com)
+##### Thanks to derivative [TouchDesigner](https://derivative.ca/)
 ---
 
 ## Getting Started

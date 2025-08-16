@@ -2,5 +2,5 @@ this is a github readme
 
 add images
 
-![Image 1](path/to/image1.png)
+![Image 1](Assets/System/GGen_alpha.png.png)
 

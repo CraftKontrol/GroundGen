@@ -58,11 +58,6 @@ Handles the generation and blending of splatmaps, which control the texture dist
 
 ---
 
-## Credits
-
-##### Main & lone dev : Arnaud Cassone aka [Artcraft](https://www.artcraft-zone.com)
-##### Thanks to derivative [TouchDesigner](https://derivative.ca/)
----
 
 ## Getting Started
 
@@ -82,6 +77,13 @@ For detailed documentation on how to use GGEN, please refer to the [wiki](https:
 ## Contributing
 
 Contributions are welcome! Please submit issues or pull requests to help improve GGEN.
+
+---
+
+## Credits
+
+##### Main & lone dev : Arnaud Cassone aka [Artcraft](https://www.artcraft-zone.com)
+##### Thanks to derivative [TouchDesigner](https://derivative.ca/)
 
 ---
 

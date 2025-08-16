@@ -54,8 +54,8 @@ Handles the generation and blending of splatmaps, which control the texture dist
 ### TO DO
 | Operator | Purpose | Notes |
 |---|---:|---|
-| Blender | Attribute mixer for terrain and splatmap networks | Combine and blend point attributes. |
-| Thermal Wither | Simulate wind erosion and weathering effects | Models thermal stress and wind-driven material loss. |
+| Blender | Attribute mixer for splatmap networks | Combine and blend point attributes. |
+| Thermal Wither | Simulate weathering effects | Models wind-driven material loss. |
 
 
 ## Getting Started

@@ -30,6 +30,10 @@ Handles the generation and blending of splatmaps, which control the texture dist
 
 ## Node Operators
 
+Node operators are the building blocks of your terrain and splatmap networks. They define how data flows and is processed within the system. They can be used to create complex interactions and effects by combining multiple operators.
+
+## 3D Operators
+
 | Operator | Purpose | Notes |
 |---|---:|---|
 | [Noise](https://github.com/CraftKontrol/GroundGen/wiki/Noise) | Add Perlin noise | Useful for fractal detail and turbulence. |

@@ -2,7 +2,7 @@
 /TDImportCache/
 /Backup/
 /*.toe
-!GroundGen.toe
+!GroundGen_Example.toe
 /logs/
 /Records/
 /*.dmp

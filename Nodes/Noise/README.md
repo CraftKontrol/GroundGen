@@ -1,4 +1,4 @@
 #Noise
-#Version 1.075
+#Version 1.078
 
 it's a Noise Generator with differents combine and view options with TOP and POP input mask function.

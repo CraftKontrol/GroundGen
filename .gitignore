@@ -10,6 +10,7 @@
 *.bak
 /Log/
 /TD/TouchEngineCrash*
+/GroundGen.wiki
 
 # MAYA
 *.swatch

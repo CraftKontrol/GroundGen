@@ -1,3 +1,3 @@
 #Snow
-#Version 1.018
+#Version 1.02
 Add Snow using Height & Tropism

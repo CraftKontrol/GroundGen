@@ -1,4 +1,4 @@
 #Erosion
-#Version 1.018
+#Version 1.021
 
 An erosion filter

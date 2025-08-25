@@ -95,7 +95,7 @@ Contributions are welcome! Please submit issues or pull requests to help improve
 
 ##### Main & lone dev : Arnaud Cassone aka [Artcraft](https://www.artcraft-zone.com)
 ##### Thanks to derivative [TouchDesigner](https://derivative.ca/)
-##### Thanks to [dotSimulate](https://www.dotsimulate.com/)
+##### Thanks to [dotSimulate](https://www.dotsimulate.com/) and [tekt](https://www.patreon.com/posts/raytk-t3d-109418194) for the node family injector.
 ---
 
 ## License

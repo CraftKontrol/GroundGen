@@ -74,7 +74,9 @@ Node operators are the building blocks of your terrain and splatmap networks. Th
 
 2. **Drag and drop the GGEN tox file into your TouchDesigner project.**
 
-3. **See the instructions provided in the GGEN.toe example file.**
+3. **Open the opMenu and browse operators in the GGen tab.**
+
+ **See the instructions provided in the GGEN.toe example file.**
 
 ---
 

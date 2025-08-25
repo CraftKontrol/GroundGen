@@ -76,7 +76,7 @@ Node operators are the building blocks of your terrain and splatmap networks. Th
 
 3. **Open the opMenu and browse operators in the GGen tab.**
 
- **See the instructions provided in the GGEN.toe example file.**
+ **See the instructions provided in the GroundGen_Example.toe file.**
 
 ---
 
@@ -95,7 +95,7 @@ Contributions are welcome! Please submit issues or pull requests to help improve
 
 ##### Main & lone dev : Arnaud Cassone aka [Artcraft](https://www.artcraft-zone.com)
 ##### Thanks to derivative [TouchDesigner](https://derivative.ca/)
-
+##### Thanks to [dotSimulate](https://www.dotsimulate.com/)
 ---
 
 ## License

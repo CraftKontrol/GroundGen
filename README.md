@@ -51,10 +51,11 @@ Node operators are the building blocks of your terrain and splatmap networks. Th
 
 | Operator | Purpose | Notes |
 |---|---:|---|
-| [Cavity](https://github.com/CraftKontrol/GroundGen/wiki/Cavity) | Detect cavities/depressions | Neighborhood analysis. |
+| [Cavity](https://github.com/CraftKontrol/GroundGen/wiki/Cavity) | Detect cavities/depressions | 2D Occlusion analysis. |
 | [HeightMap](https://github.com/CraftKontrol/GroundGen/wiki/HeightMap) | Extract 2D heightmap from terrain flow | For export or downstream 2D processing. |
 | [Level](https://github.com/CraftKontrol/GroundGen/wiki/Level) | Normalize/adjust texture values | Fit height or texture within specified bounds. |
 | [Slope](https://github.com/CraftKontrol/GroundGen/wiki/Slope) | Compute terrain slope | Drive slope-based texturing or visualizations. |
+| [Combiner](https://github.com/CraftKontrol/GroundGen/wiki/Combiner) | Blend multiple inputs | Useful for creating complex materials. |
 | [Splatmap](https://github.com/CraftKontrol/GroundGen/wiki/Splatmap) | Generate splatmaps from point attributes | Controls texture/biome distribution for shaders. |
 ---
 

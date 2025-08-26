@@ -49,7 +49,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
  
 
 '''	
-		op.GGenLogger.Info("Initializing GroundGenExt") if op.GGen.par.Verbose else None
+		op.GGenLogger.Info("Initializing GroundGenExt") 
 		if self.Setup():
 			  
 			# op.GGenLogger.Info('Installing GroundGen Nodes')

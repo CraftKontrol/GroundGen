@@ -35,6 +35,6 @@ class HeightMapExt:
 	def OnPulse(self, name):
 		if name == 'Help':
 			# open html browser
-			mod.webbrowser.open('https://github.com/CraftKontrol')
+			mod.webbrowser.open('https://github.com/CraftKontrol/GroundGen-for-Touchdesigner/wiki/heightmap')
 		pass
 	

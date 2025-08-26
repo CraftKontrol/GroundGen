@@ -5,8 +5,9 @@ Author: Arnaud Cassone
 """
 
 from TDStoreTools import StorageManager
-import TDFunctions as TDF
+import TDFunctions as TDF 
 import CraftGGenUtils
+import json
 
 class SplatMapExt:
 	"""
@@ -32,9 +33,9 @@ class SplatMapExt:
 			self.SourceMenuNames = tempList
 			self.updateMenu()	
 		
-		# Update parameter name and source
-		self.changeParamName(parent().par.Paramname)
-		self.changeSource(parent().par.Source)
+							
+							
+							
 	
 		pass
 

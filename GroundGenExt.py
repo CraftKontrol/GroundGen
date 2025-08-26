@@ -4,12 +4,13 @@ Author: Arnaud Cassone
 
 """
 
+from datetime import datetime
 from TDStoreTools import StorageManager
 import TDFunctions as TDF
 import json
 import os
-
-
+import CraftGGenUtils as CraftGGenUtils
+import datetime
 class GroundGenExt:
 	"""
 	GroundGenExt is an extension for the GGen node.
@@ -26,27 +27,19 @@ class GroundGenExt:
 		TDF.createProperty(self, 'Installed', value=False, dependable=True,readOnly=False)
 		TDF.createProperty(self, 'Splats', value=[], dependable=True,readOnly=False)
 		TDF.createProperty(self, 'Licence', value="", dependable=True,readOnly=False)
-		# attributes:
-		self.a = 0 # attribute
-		self.B = 1 # promoted attribute
 
-		# stored items (persistent across saves and re-initialization):
-		storedItems = [
-			# Only 'name' is required...
-			{'name': 'StoredProperty', 'default': None, 'readOnly': False,
-			 						'property': True, 'dependable': True},
-		]
-		# Uncomment the line below to store StoredProperty. To clear stored
-		# 	items, use the Storage section of the Component Editor
 		
-		# self.stored = StorageManager(self, ownerComp, storedItems)
+		if hasattr(op, 'SplatmapsNetwork'):
+			op.SplatmapsNetwork.op('Startup').par.startpulse.pulse()
 
-	def myFunction(self, v):
-		debug(v)
+		if hasattr(op, 'TerrainNetwork'):
+			op.TerrainNetwork.op('Startup').par.startpulse.pulse()
+
+
 
 	def Startup(self):
-		#CraftGGenUtils.RestartAllCustomNodes()
- 
+
+		self.RestartAllCustomNodes()
 		# public mit licence
 		self.Licence = '''Copyright (c) 2025 Arnaud Cassone, Artcraft Visuals
 
@@ -86,16 +79,29 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 		# Create the default config file
 		default = {
-			"GGen version": app.version,
+			"Touchdesigner version": app.version + " " + app.build,
+			"GGen version": str(parent().par.Header.label).split('Version ')[1],
+			"Last Updated": "",
 			"settings": {
-				"resolution": [1920, 1080],
-				"quality": "high"
+				"TerrainNetwork": "", 
+				"SplatmapsNetwork": "", 
+			
+			},
+			"Splatmaps": {
+				"op": "",
+				"inputs": {},
+				"outputs": {}
+			},
+			"Terrain": {
+				"op": "",
+				"inputs": {},
+				"outputs": {}
 			}
 		}
 		# setup the config files
 		# check if config.json in user/GGen exists, if not copy it from the default config
 		try:
-			configPath = os.path.expanduser('~/GGen/config.json')
+			configPath = parent().par.Ggenfolder + '/config.json'
 			op.GGenLogger.Info('Config path: ' + configPath)
 			if not os.path.exists(configPath):
 				op.GGenLogger.Info('Creating default config file')
@@ -104,7 +110,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 				# write the default config to the file
 				with open(configPath, 'w') as f:
 					json.dump(default, f, indent=4)
-				
+				 
 			else:
 				op.GGenLogger.Info('Config file already exists, skipping creation')		
 			
@@ -112,6 +118,72 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		except Exception as e:
 			op.GGenLogger.Error('Error creating config file: ' + str(e))
 			return False
+	def RestartAllCustomNodes(self):
+		op.GGenLogger.Info('Restarting all custom nodes')
+		for node in op.GGen.op('custom_operators').findChildren(tags=['GGen2d','GGen3d']):
+			node.op('Startup').par.startpulse.pulse()
+
+	def OnSave(self):
+		op.GGenLogger.Info('Saving GroundGenExt state')
+		splatNet = ""
+		geoNet = ""
+		splats = []
+		geos = []
+		if hasattr(op, 'SplatmapsNetwork'):
+			splatNet = str(op.SplatmapsNetwork)
+			
+			# Find all splat maps in the SplatmapsNetwork
+			for node in op.SplatmapsNetwork.findChildren(tags=['GGen2d','GGen3d', 'Splatmap']):
+				source = []
+				dest = []
+				for par in node.pars():
+					if "Source" in par.name:
+						source.append((par.name, par.eval()))
+					if "Paramname" in par.name:
+						dest.append((par.name, par.eval()))
+				info = {
+					"op": str(node),
+					"inputs": source,
+					"outputs": dest
+				}
+				splats.append(info)
+		
+		if hasattr(op, 'TerrainNetwork'):
+			geoNet = str(op.TerrainNetwork)	
+
+			for node in op.TerrainNetwork.findChildren(tags=['GGen2d','GGen3d']):
+				source = []
+				dest = []
+				for par in node.pars():
+					if "Source" in par.name:
+						source.append((par.name, par.eval()))
+					if "Paramname" in par.name:
+						dest.append((par.name, par.eval()))
+				info = {
+					"op": str(node),
+					"inputs": source,
+					"outputs": dest
+				}
+				geos.append(info)
+
+		version = str(parent().par.Header.label).split('Version ')[1]
+
+		
+
+			#print(version)
+		configPath = parent().par.Ggenfolder + '/config.json'
+		# read write
+		with open(configPath, 'r+') as f:
+			config = json.load(f)
+			
+			config['Last Updated'] = str(datetime.datetime.now())
+			config['settings']['SplatmapsNetwork'] = splatNet
+			config['settings']['TerrainNetwork'] = geoNet
+			config['Splatmaps'] = splats
+			config['Terrain'] = geos
+			config['GGen version'] = version
+			f.seek(0)
+			json.dump(config, f, indent=4)
 
 	def Update(self):
 		# compare the splat maps in the SplatmapsNetwork with the current splats
@@ -155,7 +227,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 		newItem = {'name': 'Base' ,'node': op.GGen.op('Shader/splatMap/out1')}
 		op.SplatmapsNetwork.SplatList.append(newItem)
 		self.Splats.insert(0, op.GGen.op('Shader/splatMap'))
-		print(self.Splats)
+		#print(self.Splats)
 
 		# Get the ShaderGGen sequence for splatmaps
 		seq = op.ShaderGGen.seq.Splatmaps 

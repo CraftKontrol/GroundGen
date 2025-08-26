@@ -28,7 +28,13 @@ class NoiseExt:
 	def OnCreate(self):
 		# Manage params of the cloned operator
 		if "GGenFamily" not in parent().tags:
-			CraftGGenUtils.SetCloneParameters(parent())
+
+			op = parent()
+			if op:
+				try:
+					CraftGGenUtils.SetCloneParameters(op)
+				except Exception:
+					pass
 
 		# Initialize the extension
 		self.OnStart()

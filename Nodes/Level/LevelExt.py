@@ -43,7 +43,10 @@ class LevelExt:
 		if "GGenFamily" not in parent().tags:
 			op = parent()
 			if op:
-				CraftGGenUtils.SetCloneParameters(op)
+				try:
+					CraftGGenUtils.SetCloneParameters(op)
+				except Exception:
+					pass
 		pass
 
 	def OnPulse(self, name):

@@ -6,6 +6,7 @@ Author: Arnaud Cassone
 from TDStoreTools import StorageManager
 import TDFunctions as TDF
 import CraftGGenUtils
+
 class BeachExt:
 	"""
 	BeachExt is an extension module for the Beach node.

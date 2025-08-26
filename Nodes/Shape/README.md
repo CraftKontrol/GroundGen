@@ -1,4 +1,4 @@
 #Shape
-#Version 1.017
+#Version 1.018
 
 Convert TOP input to Heightmap

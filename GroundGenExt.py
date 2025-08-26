@@ -9,6 +9,7 @@ import TDFunctions as TDF
 import json
 import os
 
+
 class GroundGenExt:
 	"""
 	GroundGenExt is an extension for the GGen node.
@@ -44,7 +45,7 @@ class GroundGenExt:
 		debug(v)
 
 	def Startup(self):
-		
+		#CraftGGenUtils.RestartAllCustomNodes()
  
 		# public mit licence
 		self.Licence = '''Copyright (c) 2025 Arnaud Cassone, Artcraft Visuals
@@ -73,9 +74,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 			op.GGenLogger.Error('GroundGenExt Setup failed')
 			self.Installed = False
 			return
-		
-		if self.Installed:
-			self.UpdateSplats()
+		if hasattr(op, 'SplatmapsNetwork'):
+			if self.Installed:
+				self.UpdateSplats()
 		
 
 		return
@@ -122,7 +123,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 			if "/GGen/Shader" in str(splat):
 				# delete it
 				self.Splats.remove(splat)	
-		
+		if not hasattr(op, 'SplatmapsNetwork'):
+			return
+
 		if  op.SplatmapsNetwork.op('UserNetwork').findChildren(tags=['Splatmap']) != self.Splats:
 			op.GGenLogger.Info('Splat maps changed')
 			self.UpdateSplats()

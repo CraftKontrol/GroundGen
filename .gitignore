@@ -12,6 +12,7 @@
 /TD/TouchEngineCrash*
 /GroundGen.wiki
 __pycache__/
+/config.json
 
 # MAYA
 *.swatch

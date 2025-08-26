@@ -16,9 +16,6 @@ class BeachExt:
 		# The component to which this extension is attached
 		self.ownerComp = ownerComp
 
-	def myFunction(self, v):
-		debug(v)
-
 	def OnStart(self):
 		pass
 	

@@ -11,10 +11,12 @@
 /Log/
 /TD/TouchEngineCrash*
 /GroundGen.wiki
+__pycache__/
 
 # MAYA
 *.swatch
 
 # WINDOWS
 *.db
+
 

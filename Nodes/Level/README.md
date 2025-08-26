@@ -1,4 +1,4 @@
 #Level
-#Version 1.026
+#Version 1.027
 
 A Scalar Level for Masks

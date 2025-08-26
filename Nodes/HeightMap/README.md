@@ -1,3 +1,3 @@
 #Height Map
-#Version 1.022
+#Version 1.023
 A Converter from Position to Height

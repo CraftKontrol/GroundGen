@@ -6,7 +6,7 @@ Author: Arnaud Cassone
 
 from TDStoreTools import StorageManager
 import TDFunctions as TDF
-import CraftGGenUtils
+import CraftGGenUtils as CraftGGenUtils
 
 class NoiseExt:
 	"""

@@ -10,7 +10,7 @@ import CraftGGenUtils
 
 class CombineExt:
 	"""
-	CombineExt description
+	CombineExt is an extension for the Combiner node.
 	"""
 	def __init__(self, ownerComp):
 		# The component to which this extension is attached

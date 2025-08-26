@@ -26,7 +26,10 @@ class TerraceExt:
 		
 			op = parent()
 			if op:
-				CraftGGenUtils.SetCloneParameters(op)
+				try:
+					CraftGGenUtils.SetCloneParameters(op)
+				except Exception:
+					pass
 
 		pass
 	

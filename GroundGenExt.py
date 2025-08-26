@@ -122,7 +122,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 			if "/GGen/Shader" in str(splat):
 				# delete it
 				self.Splats.remove(splat)	
-
+		
 		if  op.SplatmapsNetwork.op('UserNetwork').findChildren(tags=['Splatmap']) != self.Splats:
 			op.GGenLogger.Info('Splat maps changed')
 			self.UpdateSplats()

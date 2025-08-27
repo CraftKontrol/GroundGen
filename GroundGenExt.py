@@ -51,15 +51,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 '''	
 		op.GGenLogger.Info("Initializing GroundGenExt") 
 		if self.Setup():
-			  
-			# op.GGenLogger.Info('Installing GroundGen Nodes')
-			# if self.InstallNodes():
-			# 	self.Installed = True
-			# 	op.GGenLogger.Info('GroundGenExt Setup completed successfully')
-			# else:
-			# 	op.GGenLogger.Error('GroundGenExt InstallNodes failed')
-			# 	self.Installed = False
-			# 	return
 
 			self.Installed = True
 
@@ -71,7 +62,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 			if self.Installed:
 				self.UpdateSplats()
 		
+		self.SetShaderParams()
 
+
+		op.GGenLogger.Info("Shader Compiled")
 		return
 	
 	def Setup(self):
@@ -96,6 +90,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 				"op": "",
 				"inputs": {},
 				"outputs": {}
+			},
+			"Shader": {
+				"Param": {},
+				"Value": {}
 			}
 		}
 		# setup the config files
@@ -168,8 +166,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 		version = str(parent().par.Header.label).split('Version ')[1]
 
-		
+		shader = []
 
+		for i in range(op.ShaderGGen.op('parameter1').numRows):
+			param = {
+				"name": str(op.ShaderGGen.op('parameter1')[i, 0]),
+				"value": str(op.ShaderGGen.op('parameter1')[i, 1])
+			}
+			shader.append(param)
+		
 			#print(version)
 		configPath = parent().par.Ggenfolder + '/config.json'
 		# read write
@@ -182,6 +187,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 			config['Splatmaps'] = splats
 			config['Terrain'] = geos
 			config['GGen version'] = version
+			config['Shader'] = shader
 			f.seek(0)
 			json.dump(config, f, indent=4)
 
@@ -943,3 +949,31 @@ in Vertex
 		
 		op.ShaderGGen.op('Roughs').text = roughs
 		pass
+	
+	def SetShaderParams(self):
+		op.GGenLogger.Info('Set Shader Params from Config')
+		configPath = op.GGen.par.Ggenfolder + "/config.json"
+		print("Loading config from: " + configPath)
+		
+		# if exists
+		config = {}
+		if os.path.exists(configPath):
+			with open(configPath, 'r') as f:
+				config = json.load(f)
+		else:
+			return
+		
+		shader = op.ShaderGGen 
+		params = config['Shader']
+
+		#apply params to shader
+
+		try:
+			for key in params:
+				
+				name = str(key['name'])
+				value = key['value']
+				#print("Setting shader param: " + name + " to value: " + str(value))
+				op.ShaderGGen.par[name] = value
+		except:
+			pass

@@ -111,10 +111,6 @@ Node operators are the building blocks of your terrain and splatmap networks. Th
 
 14. **Have Fun!**
 
-**See the [instructions provided in the wiki](https://github.com/CraftKontrol/GroundGen/wiki)**
-
----
-
 
 ## Documentation
 

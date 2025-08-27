@@ -70,24 +70,48 @@ Node operators are the building blocks of your terrain and splatmap networks. Th
 | [MatOut](https://github.com/CraftKontrol/GroundGen/wiki/MatOut) | Outputs the final shader for the terrain.                                          | Everywhere      |
 | [SplatOut](https://github.com/CraftKontrol/GroundGen/wiki/SplatOut) | Outputs the final splatmap in a TOP format.                                         | Everywhere      |
 
-### TO DO
+### TO DO maybe...
+
 | Operator | Purpose | Notes |
 |---|---:|---|
 | Blender | Attribute mixer for splatmap networks | Combine and blend point attributes. |
 | Thermal Wither | Simulate weathering effects | Models wind-driven material loss. |
-
+| Splat Exporters | Export splatmaps for external engines | Includes Unreal, Unity, and other common formats. |
+| Geometry Exporter | Export terrain geometry to external formats | Supports OBJ, FBX, and other common 3D formats. |
 ---
 
 
 ## Getting Started
 
-1. **Clone the Repository:**
+1. **Clone the Repository.**
 
-2. **Drag and drop the GGEN tox file into your TouchDesigner project.**
+2. **Drag and drop the GGEN tox file everywhere into your TouchDesigner project.**
 
 3. **Open the opMenu and browse operators in the GGen tab.**
 
- **See the instructions provided in the GroundGen_Example.toe file.**
+4. **Click on the UI button to open the GroundGen interface.**
+
+5. **Click on the "Open Terrain" button to open the Terrain Network.**
+
+6. **Open the opMenu and create a GGen noise operator, and a GGen erosion operator.**
+
+7. **Connect the noise operator to the erosion operator, and then connect the erosion operator to the output.**
+
+8. **Click on the "Open Splatmaps" button to open the Splatmap Network.**
+
+9. **Open the opMenu and create a GGen splatmap operator.**
+
+10. **Connect the input to the splatmap operator.**
+
+11. **Choose the erosion parameter from the source dropdown menu.**
+
+12. **If not given, enter a name for the splatmap, e.g. "Erosion."**
+
+13. **Once a splatmap is created, the shader will automatically update to include it.**
+
+14. **Have Fun!**
+
+**See the [instructions provided in the wiki](https://github.com/CraftKontrol/GroundGen/wiki)**
 
 ---
 

@@ -38,7 +38,7 @@ class GroundGenExt:
 
 
 	def Startup(self):
-
+		print("GGen Started")
 		self.RestartAllCustomNodes()
 		# public mit licence
 		self.Licence = '''Copyright (c) 2025 Arnaud Cassone, Artcraft Visuals

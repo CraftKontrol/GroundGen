@@ -52,6 +52,8 @@ class GenericInstallerEXT:
         self.connection_map = connection_map or {}
         self.find_other_installers(op, self.family_name)
 
+        version = str(parent().par.Header.label).split('Version ')[1]
+        print('GGen' ,version,  'Installed')
         run(
 			"args[0].postInit() if args[0] "
 					"and hasattr(args[0], 'postInit') else None",

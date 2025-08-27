@@ -59,6 +59,15 @@ Node operators are the building blocks of your terrain and splatmap networks. Th
 | [Splatmap](https://github.com/CraftKontrol/GroundGen/wiki/Splatmap) | Generate splatmaps from point attributes | Controls texture/biome distribution for shaders. |
 ---
 
+
+### Output Operators
+
+| Operator | Purpose | Notes |
+|---|---:|---|
+| [GeoOut](https://github.com/CraftKontrol/GroundGen/wiki/GeoOut) | Outputs the final terrain geometry as a 3D model.                                   | Everywhere       |
+| [MatOut](https://github.com/CraftKontrol/GroundGen/wiki/MatOut) | Outputs the final shader for the terrain.                                          | Everywhere      |
+| [SplatOut](https://github.com/CraftKontrol/GroundGen/wiki/SplatOut) | Outputs the final splatmap in a TOP format.                                         | Everywhere      |
+
 ### TO DO
 | Operator | Purpose | Notes |
 |---|---:|---|

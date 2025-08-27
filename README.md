@@ -8,6 +8,8 @@ It can generate unlimited splatmaps stored as point attributes, tile and fill la
 
 It provides separate terrain and splatmap networks for geometry shaping and texture/biome distribution, encourages a fully procedural, GPU‑friendly, non‑destructive workflow, and ships as reusable components you can extend, with contributions welcomed under the MIT license.
 
+For more information, visit the [GGEN Wiki](https://github.com/CraftKontrol/GroundGen/wiki).
+
 ---
 
 ### Features
